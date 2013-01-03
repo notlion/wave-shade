@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>WaVe</title>
+  <style>
+  @import "style/codemirror.css";
+  html, body {
+    margin: 0; padding: 0;
+  }
+  #gl-canvas, .CodeMirror {
+    width: 512px;
+    height: 512px;
+    float: left;
+    margin: 10px 0 10px 10px;
+    border: 1px solid #ccc;
+  }
+  </style>
+</head>
+<body>
+  <canvas id="gl-canvas"></canvas>
+  <textarea id="code-textarea">
+varying float time;
+
+void main() {
+  gl_FragColor.x = sin((time + sin(time)) * 440.) * .5;
+}
+</textarea>
+  <script src="lib/codemirror.js"></script>
+  <script src="lib/codemirror-glsl.js"></script>
+  <script src="lib/embr/build/embr.js"></script>
+  <script src="build/main.js"></script>
+</body>
+</html>
