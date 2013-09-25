@@ -1,9 +1,13 @@
-lib/embr/build/embr.js:
-	cd ./lib/embr/ && make
+all: build/bundle.js
 
-compile: lib/embr/build/embr.js
-	./node_modules/coffee-script/bin/coffee -bw -o ./build -c ./src
+build/main.js:
+	node_modules/coffee-script/bin/coffee -b -j build/main.js -c ./src
+
+build/bundle.js: build/main.js
+	node_modules/browserify/bin/cmd.js build/main.js -o build/bundle.js
 
 clean:
 	rm -rf ./build
-	cd ./lib/embr/ && make clean
+
+run: all
+	python -m SimpleHTTPServer 3000

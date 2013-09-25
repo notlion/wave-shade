@@ -1,7 +1,10 @@
 {
-  "name": "turing"
-, "version": "0.0.0"
-, "dependencies": {
-    "coffee-script": ">= 1.4.0"
+  "name": "turing",
+  "version": "0.0.0",
+  "dependencies": {
+    "coffee-script": ">= 1.4.0",
+    "embr": "0.0.6",
+    "embr-presets": "0.0.1",
+    "browserify": "~2.33.0"
   }
 }
